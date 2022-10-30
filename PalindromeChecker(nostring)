@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+    int sub, checker=0, big;
+    char word[50];
+
+    printf("Enter word: ");
+    scanf("%s", word);
+
+    for(sub=0;sub<=strlen(word);sub++)
+        {
+        if(word[sub]>=65 && word[sub]<=90)
+            {
+            word[sub] = word[sub]+32;
+            }
+                if (word[sub] != word[strlen(word)-1-sub])
+                {
+                    checker++;
+                }
+        }
+    
+    printf("\n%d\n", checker);
+    
+    if (checker==0)
+        printf("Your word, %s, is a palindrome.", word);
+    else
+        printf("Your word, %s, is not a palindrome.", word);
+    
+return 0;
+}
