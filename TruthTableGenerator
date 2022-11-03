@@ -1,0 +1,160 @@
+// Truth Table Calculator
+// Made by Angelo Bayla
+#include <stdio.h>
+#include <string.h>
+
+// void function to remove spaces in string (optional if specified.)
+void remsp(char *l1, char *l2)
+{
+	int count1 = 0, count2 = 0;
+
+	for (int i = 0; l1[i]; i++)
+		if (l1[i] != ' ')
+			l1[count1++] = l1[i];
+	l1[count1] = '\0';
+
+	for (int j = 0; l2[j]; j++)
+		if (l2[j] != ' ')
+			l2[count2++] = l2[j];
+	l2[count2] = '\0';
+}
+
+int main()
+{
+	int i, k;
+	char l1[50], l2[50], ans, log[8];
+
+	printf("The 1st table consists of: ");
+	fgets(l1, sizeof(l1), stdin);
+	printf("The 2nd table consists of: ");
+	fgets(l2, sizeof(l2), stdin);
+
+	remsp(l1, l2);
+	
+	// stops program if they don't have the same amount, meaning it will result in error.
+	if (strlen(l1) != strlen(l2))
+	{
+		printf("Both input should have the same amount to compare. Please try again.");
+		return 0;
+	}
+	
+	// truth table selector
+	printf("\n v (OR) = True if either or both is true, otherwise false.");
+	printf("\n ^ (AND) = True only if both are true, otherwise false.");
+	printf("\n ~ (NOT) = Opposite of the input.");
+	printf("\n XOR (EXOR) = False if both are true or false, otherwise true.");
+	printf("\n >> (IMPLY) = Follows 'then' regardless of 'if', otherwise true.");
+	printf("\n <> (DOUBLE IMPLY) = True if both are true or false, otherwise false.");
+	
+	printf("\n\nWhat type of propositional logic table would you like to make? ");
+	scanf("%s", log);
+
+	// OR GATE
+	if (strcmp(log, "v") == 0 || strcmp(log, "V") == 0 || strcmp(log, "OR") == 0 || strcmp(log, "or") == 0 || strcmp(log, "Or") == 0)
+	{
+		printf("\nYOUR TRUTH TABLE LOOKS LIKE:");
+		for (i = 0; i < strlen(l1) - 1; i++)
+		{
+			if (l1[i] == 'T' || l2[i] == 'T' || l1[i] == 't' || l2[i] == 't')
+				ans = 'T';
+			else
+				ans = 'F';
+
+			printf("\n %c OR %c = %c", l1[i], l2[i], ans);
+		}
+	}
+
+	// AND GATE
+	else if (strcmp(log, "^") == 0 || strcmp(log, "AND") == 0 || strcmp(log, "and") == 0 || strcmp(log, "And") == 0)
+	{
+		printf("\nYOUR TRUTH TABLE LOOKS LIKE:");
+		for (i = 0; i < strlen(l1) - 1; i++)
+		{
+			if (l1[i] == 'T' && l2[i] == 'T' || l1[i] == 't' && l2[i] == 't' || l1[i] == 't' && l2[i] == 'T' || l1[i] == 'T' && l2[i] == 't')
+				ans = 'T';
+			else
+				ans = 'F';
+
+			printf("\n %c AND %c = %c", l1[i], l2[i], ans);
+		}
+	}
+
+	// NOT GATE
+	else if (strcmp(log, "~") == 0 || strcmp(log, "NOT") == 0 || strcmp(log, "not") == 0 || strcmp(log, "Not") == 0)
+	{
+		printf("\nYOUR TRUTH TABLE LOOKS LIKE:");
+		for (i = 0; i < strlen(l1) - 1; i++)
+		{
+			if (l1[i] == 'T' || l1[i] == 't')
+				printf("\n[1] %s %c = F", log, l1[i]);
+			else
+				printf("\n[1] %s %c = T", log, l1[i]);
+		}
+
+		for (i = 0; i < strlen(l2) - 1; i++)
+		{
+			if (l2[i] == 'T' || l2[i] == 't')
+				printf("\n[2] %s %c = F", log, l2[i]);
+			else
+				printf("\n[2] %s %c = T", log, l2[i]);
+		}
+	}
+
+	// XOR GATE
+	else if (strcmp(log, "XOR") == 0 || strcmp(log, "xor") == 0 || strcmp(log, "Xor") == 0 ||
+		strcmp(log, "EXOR") == 0 || strcmp(log, "exor") == 0 || strcmp(log, "Exor") == 0 ||
+		strcmp(log, "EOR") == 0 || strcmp(log, "eor") == 0 || strcmp(log, "Eor") == 0)
+	{
+		printf("\nYOUR TRUTH TABLE LOOKS LIKE:");
+		for (i = 0; i < strlen(l1) - 1; i++)
+		{
+			if (l1[i] == 'T' && l2[i] == 'T' || l1[i] == 't' && l2[i] == 't' || l1[i] == 't' && l2[i] == 'T' || l1[i] == 'T' && l2[i] == 't')
+				ans = 'F';
+			else if (l1[i] == 'F' && l2[i] == 'F' || l1[i] == 'f' && l2[i] == 'f' || l1[i] == 'F' && l2[i] == 'f' || l1[i] == 'f' && l2[i] == 'f')
+				ans = 'F';
+			else
+				ans = 'T';
+
+			printf("\n %c XOR %c = %c", l1[i], l2[i], ans);
+		}
+	}
+
+	// IMPLY GATE
+	else if (strcmp(log, ">>") == 0 || strcmp(log, "IMPLY") == 0 || strcmp(log, "imply") == 0 || strcmp(log, "Imply") == 0)
+	{
+		printf("\nYOUR TRUTH TABLE LOOKS LIKE:");
+		for (i = 0; i < strlen(l1) - 1; i++)
+		{
+			if (l2[i] == 'T' || l2[i] == 't')
+				ans = 'T';
+			else if (l1[i] == 'F' && l2[i] == 'F' || l1[i] == 'f' && l2[i] == 'f' || l1[i] == 'f' && l2[i] == 'F' || l1[i] == 'F' && l2[i] == 'f')
+				ans = 'T';
+			else
+				ans = 'F';
+
+			printf("\n %c >> %c = %c", l1[i], l2[i], ans);
+		}
+	}
+
+	// DOUBLE IMPLY GATE
+	else if (strcmp(log, "<>") == 0 || strcmp(log, "Double Imply") == 0 || strcmp(log, "DOUBLE IMPLY") == 0 || strcmp(log, "double imply") == 0 || strcmp(log, "Double imply") == 0)
+	{
+		printf("\nYOUR TRUTH TABLE LOOKS LIKE:");
+		for (i = 0; i < strlen(l1) - 1; i++)
+		{
+			if (l1[i] == 'T' && l2[i] == 'T' || l1[i] == 't' && l2[i] == 't' || l1[i] == 't' && l2[i] == 'T' || l1[i] == 'T' && l2[i] == 't')
+				ans = 'T';
+			else if (l1[i] == 'F' && l2[i] == 'F' || l1[i] == 'f' && l2[i] == 'f' || l1[i] == 'f' && l2[i] == 'F' || l1[i] == 'F' && l2[i] == 'f')
+				ans = 'T';
+			else
+				ans = 'F';
+
+			printf("\n %c <> %c = %c", l1[i], l2[i], ans);
+		}
+	}
+	// if invalid input
+	else
+		printf("\nTruth table unknown, please try again.");
+
+	return 0;
+}
