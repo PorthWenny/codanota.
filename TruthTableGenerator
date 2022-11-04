@@ -44,7 +44,7 @@ int main()
 	printf("\n ~ (NOT) = Opposite of the input.");
 	printf("\n XOR (EXOR) = False if both are true or false, otherwise true.");
 	printf("\n >> (IMPLY) = Follows 'then' regardless of 'if', otherwise true.");
-	printf("\n <> (DOUBLE IMPLY) = True if both are true or false, otherwise false.");
+	printf("\n <> (DOUBLEIMPLY) = True if both are true or false, otherwise false.");
 	
 	printf("\n\nWhat type of propositional logic table would you like to make? ");
 	scanf("%s", log);
@@ -137,7 +137,7 @@ int main()
 	}
 
 	// DOUBLE IMPLY GATE
-	else if (strcmp(log, "<>") == 0 || strcmp(log, "Double Imply") == 0 || strcmp(log, "DOUBLE IMPLY") == 0 || strcmp(log, "double imply") == 0 || strcmp(log, "Double imply") == 0)
+	else if (strcmp(log, "<>") == 0 || strcmp(log, "DoubleImply") == 0 || strcmp(log, "DOUBLEIMPLY") == 0 || strcmp(log, "doubleimply") == 0 || strcmp(log, "Doubleimply") == 0)
 	{
 		printf("\nYOUR TRUTH TABLE LOOKS LIKE:");
 		for (i = 0; i < strlen(l1) - 1; i++)
