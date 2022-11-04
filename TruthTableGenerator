@@ -22,7 +22,7 @@ void remsp(char *l1, char *l2)
 int main()
 {
 	int i, k;
-	char l1[50], l2[50], ans, log[8];
+	char l1[50], l2[50], ans, log[20];
 
 	printf("The 1st table consists of: ");
 	fgets(l1, sizeof(l1), stdin);
