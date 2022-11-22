@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    char name[5][50]; 
+    //visualize a matrix table for getting the name...
+    //we have 6 rows with 51 slots available in each of them (since we start from zero.)
+    int i;
+    
+    // put a for loop to input names
+    for(i=0; i<5;i++)
+    {
+        printf("Enter name: ");
+        // the i gets the address or the row...
+        scanf("%s", name[i]);
+    }
+    
+    // refers to the 3rd row in the matrix table (starting from zero.)
+    printf("\nThe 3rd second name is %c", name[2]);
+    
+    // Getting a specific point in the matrix table...
+    printf("\nThe 4th letter in the second name is %c", name[1][3]);
+    
+
+    return 0;
+}
