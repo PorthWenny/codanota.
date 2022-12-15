@@ -3,13 +3,13 @@
 
 int main(){
 
-int num[50],stop=0, x[50];
+int num[50],stop=0,stop2, x[50];
 int high;
-float sum;
+float sum=0;
 
 printf("== STATISTICS CALCULATOR (for GEMATH) ==\n");
 printf(" Enter '0' to end the loop.\n\n");
-for(int i=0;i<100;i++){
+for(int i=0;i<1000;i++){
 printf(" Enter number: ");
 scanf("%d", &num[i]);
 
@@ -20,6 +20,7 @@ if (num[i]>high)
 
 if(num[i]==0){
     stop=i;
+    stop2=stop;
     printf("\n Your set have %d element/s in it.", i);
     break;
     }
@@ -28,7 +29,7 @@ sum = sum + num[i];
 }
 
 printf("\n YOUR SET: [ ");
-for(int i=0; i<stop; i++){
+for(int i=0; i < stop; i++){
           for(int k=i+1; k<stop;k++){
             if(num[k] < num[i]){
                 int emp = num[i];
@@ -116,12 +117,12 @@ switch (what){
 }
 
 printf("\nSAMPLE STANDARD DEVIATION CALCULATOR:\n");
-printf("[===================================================]\n");
-printf("[     x     ][     x - %g     ][      (x - %g)^2      ]\n", mean, mean);
+printf("[================================================================]\n");
+printf("[     x     ][     x - %.2f     ][      (x - %.2f)^2      ]\n", mean, mean);
 
 double summ = 0;
 
-for (int i=0;i<stop;i++){
+for (int i = 0;i < stop2; i++) {
 
 	int value = x[i] - mean;
 	int sqrd = value * value;
@@ -135,14 +136,14 @@ for (int i=0;i<stop;i++){
 	summ = summ + sqrd;
 }
 
-float var = summ / (stop - 1);
+float var = summ / (stop2 - 1);
 double ssd = sqrt(var);
 
-	printf("[===================================================]\n");
+printf("[================================================================]\n");
 	printf("               TOTAL  =  %g \n", summ);
-	printf("	VARIANCE  =  TOTAL / %d  =  %.2f \n", stop-1, var);
+	printf("	VARIANCE  =  TOTAL / %d  =  %.2f \n", stop2-1, var);
 	printf("   STANDARD DEVIATION  =  sqrt(VAR)  = %.2lf  \n", ssd);
-	printf("[===================================================]\n");
+printf("[================================================================]\n");
 
 
 return 0;
