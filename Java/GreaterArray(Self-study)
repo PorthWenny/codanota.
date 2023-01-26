@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Trylang {
+    public static void main(String[] args) {
+        
+    Scanner scanner = new Scanner(System.in);
+    int[] arr = new int[5];
+    int num = 0, wow = 0;
+        
+    do {
+        System.out.print("Enter "+(num+1)+" integer: ");
+        arr[num] = scanner.nextInt();
+        
+        if (arr[num] > wow) {
+            wow = arr[num];
+        }
+
+        num++;
+    } while (num != 5);
+    
+    System.out.println("The biggest integer is: " +wow);
+    }
+}
