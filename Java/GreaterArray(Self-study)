@@ -2,15 +2,15 @@ import java.io.*;
 import java.util.*;
 
 public class Trylang {
-    public static void main(String[] args) {
+    public static void main(String[] maykwentoakizkiz) {
         
-    Scanner scanner = new Scanner(System.in);
+    Scanner holabels = new Scanner(System.in);
     int[] arr = new int[5];
     int num = 0, wow = 0;
         
     do {
         System.out.print("Enter "+(num+1)+" integer: ");
-        arr[num] = scanner.nextInt();
+        arr[num] = holabels.nextInt();
         
         if (arr[num] > wow) {
             wow = arr[num];
