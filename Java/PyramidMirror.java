@@ -4,22 +4,22 @@ public class Main {
   public static void main(String args[]) {
 
         Scanner holabels = new Scanner(System.in);
-        int n;
+        int row;
        
       System.out.print("Input value of n: ");
-        n = holabels.nextInt();
+        row = holabels.nextInt();
 
         // initialize variables to be used.
-        int count = n, num1 = 1;
+        int space = row-1, placeholder = 1;
         // main for loop
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= row; i++) {
             
             // for spacing
-            for (int a = count; a >= 1; a--) {
+            for (int a = space; a >= 1; a--) {
                 System.out.print(" ");
             }
            
-            int num = num1;
+            int num = placeholder;
             // for left side design
             for (int j = 1; j <= i; j++) {
                 System.out.print(num);
@@ -35,8 +35,8 @@ public class Main {
                 }
             }
            
-            count--;
-            num1++;
+            space--;
+            placeholder++;
             System.out.println(" ");
         }
     }
