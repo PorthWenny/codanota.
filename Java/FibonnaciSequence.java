@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class FibonacciSequence {
+public class FibonnaciSequence {
   public static void main(String args[]) {
     
       Scanner holabels = new Scanner(System.in);
