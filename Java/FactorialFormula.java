@@ -25,7 +25,7 @@ public class FactorialFormula {
               }
           }
 
-          System.out.print("= "+fac);
+          System.out.println("= "+fac);
     }
 
     }

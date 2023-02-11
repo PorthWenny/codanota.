@@ -31,7 +31,6 @@ public class PyramidMirror {
                         num++;
                     }
                 }
-                
                 System.out.println(" ");
             }
         }
