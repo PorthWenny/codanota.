@@ -1,6 +1,3 @@
-import java.io.*;
-import java.util.*;
-
 public class EvenNumbers {
   public static void main(String args[]) {
     
