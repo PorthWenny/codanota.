@@ -1,4 +1,4 @@
-//How many words in your sentence?
+//How many words are in your sentence?
 //Counter by Angelo Bayla
 #include <stdio.h>
 
