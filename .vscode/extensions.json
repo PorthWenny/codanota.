@@ -2,4 +2,8 @@
     "recommendations": [
         "vscjava.vscode-java-debug"
     ]
+
+    "remote.extensionKind": {
+        "adpyke.codesnap": [ "ui" ],
+     }
 }
