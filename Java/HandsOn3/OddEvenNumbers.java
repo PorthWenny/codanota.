@@ -1,5 +1,7 @@
-public class OddEvenNumbers {
-    public static main void (String[] coderakizkiz) {
+package HandsOn3;
+
+class OddEvenNumbers {
+    public static void main (String[] coderakizkiz) {
 
         int sum = 0;
 
