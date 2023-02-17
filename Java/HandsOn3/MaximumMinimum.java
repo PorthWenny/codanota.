@@ -33,8 +33,7 @@ public class MaximumMinimum {
             }
 
             System.out.println("Maximum difference: " +high+ " - " +low+ " = " + (high - low));
+            System.out.println("Minimum difference: " +sec+ " - " +low+ " = " + (sec - low));
         }
-
-         System.out.println("Minimum difference: " +sec+ " - " +low+ " = " + (sec - low));
     }
 }

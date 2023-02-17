@@ -21,9 +21,8 @@ public class BiggestSmallest {
                 }
             }
 
-            System.out.println("The highest value is " + high);
-        }
+        System.out.println("The highest value is " + high);
         System.out.println("The smallest value is " + low);
-
+        }
     }
 }

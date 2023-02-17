@@ -32,11 +32,11 @@ public class ArraySearch {
                 }
             }
 
-            System.out.println("Number of positive numbers: " + pos);
-        }
+        System.out.println("Number of positive numbers: " + pos);
         System.out.println("Number of negative numbers: " + neg);
         System.out.println("Number of odd numbers: "+ odd);
         System.out.println("Number of even numbers: "+ even);
         System.out.println("Number of 0s: " + zero);
+        }
     }
 }
