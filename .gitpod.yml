@@ -1,0 +1,6 @@
+
+vscode:
+  extensions:
+    - vscjava.vscode-java-pack
+    - adpyke.codesnap
+    - SonarSource.sonarlint-vscode
