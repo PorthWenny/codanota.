@@ -1,7 +1,5 @@
-import java.io.*;
-
 public class TwoDimensionDisplayPart2 {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
 
     // declare variables
     int[][] numArr = new int[4][4];

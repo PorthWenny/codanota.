@@ -1,7 +1,5 @@
-import java.io.*;
-
 public class TwoDimensionDisplay {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
 
     int[][] numArr = {{80,90,50},{-80,-90,-50},{70,-80,-60}};
 

@@ -13,7 +13,7 @@ public class twodarraynotes {
         for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
         System.out.println("Enter the value of the array for: " + i + " " + j );
-        multidimensionalArray[i][j]  scan.nextInt();
+        multidimensionalArray[i][j] = scan.nextInt();
         computation = computation + multidimensionalArray[i][j];
         }
         }
