@@ -16,12 +16,8 @@ class RansomCompare {
              }
         }
 
-        if (counter == ransomNote.length()) {
-            return true;
-        }
-        else
-            return false;
-        }
+        return (counter == ransomNote.length());
+}
 
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
