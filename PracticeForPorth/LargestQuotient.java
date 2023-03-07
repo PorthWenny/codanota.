@@ -1,6 +1,6 @@
 import java.util.*;
 
-class LargestQuotient {
+public class LargestQuotient {
     public static void main (Strings[] args) {
 
         Scanner input = new Scanner(System.in);
