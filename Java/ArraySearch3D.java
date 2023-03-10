@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class 3DArraySearch {
+class ArraySearch3D {
     public static void main (String[] args) {
 
         try (Scanner input = new Scanner(System.in)) {
