@@ -1,14 +1,15 @@
 import java.util.*;
 
 public class LargestQuotient {
-    public static void main (Strings[] args) {
+    public static void main (String[] args) {
 
         Scanner input = new Scanner(System.in);
 
         ArrayList<Integer> numArr = new ArrayList<Integer>();
 
         do {
-            numArr.add(input.nextInt());
-        } while (numArr[numArr.length-1] != 0);
+            int i = input.nextInt();
+            numArr.add(i);
+        } while (numArr != 0);
     }
 }
