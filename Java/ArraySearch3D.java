@@ -5,7 +5,7 @@ class ArraySearch3D {
 
         try (Scanner input = new Scanner(System.in)) {
             int[][][] numArr = new int[2][2][5];
-            int pos=0, neg=0, odd=0, even=0, zero=0-9;
+            int pos=0, neg=0, odd=0, even=0, zero=0;
 
             System.out.println("Enter values of 3D array: ");
             for (int i = 0; i < numArr.length; i++) {
