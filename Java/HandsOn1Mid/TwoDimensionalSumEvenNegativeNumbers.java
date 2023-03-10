@@ -1,4 +1,3 @@
-package HandsOn1Mid;
 import java.util.Scanner;
 
 public class TwoDimensionalSumEvenNegativeNumbers {

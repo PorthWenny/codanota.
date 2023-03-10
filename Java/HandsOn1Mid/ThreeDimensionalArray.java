@@ -1,4 +1,3 @@
-package HandsOn1Mid;
 class ThreeDimensionalArray {
     public static void main(String[] args) {
 
