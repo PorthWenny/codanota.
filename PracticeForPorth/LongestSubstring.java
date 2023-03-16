@@ -15,8 +15,8 @@ public class LongestSubstring {
             while(!set.add(s.charAt(i))) {
                 set.remove(s.charAt(left++));
             }
-            // update max value between max & substring length + 1
-            max = Math.max(max, right - left + 1);
+            // update max as largest substring value between max & substring length + 1
+            max = Math.max(max, i - left + 1);
         }
 
         return max;
