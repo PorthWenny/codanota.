@@ -103,7 +103,7 @@ public class DynamicArrayList {
             case 'Z':
                 System.out.println("You want to know the size of the ArrayList");
 
-                System.out.print("\nThe ArrayList size is: " + n);
+                System.out.println("\nThe ArrayList size is: " + n);
                 break;
             default:
                 System.out.println("Invalid input. Please try again.");

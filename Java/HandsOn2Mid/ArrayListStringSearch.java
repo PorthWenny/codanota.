@@ -13,8 +13,6 @@ public class ArrayListStringSearch {
         for (int i = 0; i < n; i++) {
         String curr = input.next();
         names.add(curr += input.nextLine());  
-        System.out.println(names.get(i));
-
         }
 
         for (int i = 0; i < n; i++) {
