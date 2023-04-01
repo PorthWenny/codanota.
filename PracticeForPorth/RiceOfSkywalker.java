@@ -9,10 +9,10 @@ public class RiceOfSkywalker {
         if (r * 3 == w) {
             System.out.println("THE RICE IS RIGHT!");
         }
-        else if (r*3 < w) {
+        else if (r * 3 < w) {
             System.out.println("WE NEED MORE RICE.");
         }
-        else if (r*3 > w) {
+        else if (r * 3 > w) {
             System.out.println("WE NEED MORE WATER.");
         }
     }

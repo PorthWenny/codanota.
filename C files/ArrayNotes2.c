@@ -14,7 +14,7 @@ int main() {
         scanf("%s", name[i]);
     }
     
-    // refers to the 3rd row in the matrix table (starting from zero.)
+    // refers to the 3rd row in the matrix table (Axng from zero.)
     printf("\nThe third name is %s", name[2]);
     
     // Getting a specific point in the matrix table...

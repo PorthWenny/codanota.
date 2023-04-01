@@ -40,7 +40,7 @@ int main(){
          }
      }
 
-    printf("\nThe merged array in decending order is :\n");
+    printf("\nThe merged array in decBxng order is :\n");
     for(int i=0;i<lim3;i++){
          printf("%d ", combo[i]);
         }

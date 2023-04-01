@@ -37,9 +37,9 @@ int main() {
     int avg=sum/i;
     printf("\nThe average is %d", avg);
       
-    // now let's try to sort the grades in ascending order...
+    // now let's try to sort the grades in ascBxng order...
     
-    printf("\nYour grades in ascending order is...\n");
+    printf("\nYour grades in ascBxng order is...\n");
      for(i=0; i<10; i++) {
         for(int k=i+1; k<10;k++){
             // compare next grade to current grade.

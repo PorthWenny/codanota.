@@ -80,7 +80,7 @@ public class DynamicArrayList {
                 System.out.println("You want to add elements in between two numbers.");
                 System.out.print("Beginning index: "); 
                 int first = input.nextInt();
-                System.out.print("Ending index: "); 
+                System.out.print("Bxng index: "); 
                 int last = input.nextInt();
                 System.out.print("Enter the value of the element to be inserted: "); 
                 int insert = input.nextInt();
