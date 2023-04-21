@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "BasicStackOperations",
+      "request": "launch",
+      "mainClass": "BasicStackOperations",
+      "projectName": "codanota._6640002e"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
