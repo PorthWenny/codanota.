@@ -3,6 +3,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "StackSearchValues",
+      "request": "launch",
+      "mainClass": "StackSearchValues",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
+      "name": "StackMathOperations",
+      "request": "launch",
+      "mainClass": "StackMathOperations",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
+      "name": "StackCountries",
+      "request": "launch",
+      "mainClass": "StackCountries",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
       "name": "BasicStackOperations",
       "request": "launch",
       "mainClass": "BasicStackOperations",
