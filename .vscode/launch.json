@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "DynamicStackOperations",
+      "request": "launch",
+      "mainClass": "DynamicStackOperations",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
+      "name": "StackWithMathOperations",
+      "request": "launch",
+      "mainClass": "StackWithMathOperations",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
       "name": "StackSearchValues",
       "request": "launch",
       "mainClass": "StackSearchValues",
