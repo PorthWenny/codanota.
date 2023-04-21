@@ -1,85 +1,69 @@
-import java.util.*;
-
-class Point {
-    int x, y;
-    public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-}
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class TrySample {
-    static int[][][] dist;
-    static char[][][] floor;
-    static int[] dx = {0, 0, 1, -1};
-    static int[] dy = {1, -1, 0, 0};
-    static int n, f;
-    static Point start, end;
+    public static int breakWall(char[][] grid, int startX, int startY, int endX, int endY) {
+        int rows = grid.length;
+        int cols = grid[0].length;
+
+        // Use a boolean grid to track visited cells and number of walls broken
+        boolean[][][] visited = new boolean[rows][cols][2]; // 2nd dimension for walls broken
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{startX, startY, 0, 0}); // Include a third element for wall count and a fourth element for walls broken
+        visited[startX][startY][0] = true; // Mark start cell as visited with 0 walls broken
+
+        // Define possible moves: up, down, left, right
+        int[][] moves = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+        while (!queue.isEmpty()) {
+            int[] curr = queue.poll();
+            int x = curr[0];
+            int y = curr[1];
+            int wallsToBreak = curr[2];
+            int wallsBroken = curr[3];
+
+            if (x == endX && y == endY) {
+                return wallsToBreak; // Reached the end point, return walls to break count
+            }
+
+            // Explore neighboring cells
+            for (int[] move : moves) {
+                int newX = x + move[0];
+                int newY = y + move[1];
+
+                if (newX >= 0 && newX < rows && newY >= 0 && newY < cols) {
+                    int newWallsBroken = wallsBroken + (grid[newX][newY] == 'X' ? 1 : 0);
+                    int newWallsToBreak = wallsToBreak + (grid[newX][newY] == 'X' && wallsBroken == 0 ? 1 : 0);
+                    if (newWallsBroken <= 1 && !visited[newX][newY][newWallsBroken]) {
+                        queue.offer(new int[]{newX, newY, newWallsToBreak, newWallsBroken});
+                        visited[newX][newY][newWallsBroken] = true;
+                    }
+                }
+            }
+        }
+
+        return -1; // No valid path found
+    }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        f = sc.nextInt();
-        n = sc.nextInt();
-        sc.nextLine();
-        floor = new char[f][n][n];
-        dist = new int[f][n][n];
-        for (int i = 0; i < f * n; i++) {
-            int floorNum = i / n;
-            int row = i % n;
-            String line = sc.nextLine();
-            for (int j = 0; j < n; j++) {
-                floor[floorNum][row][j] = line.charAt(j);
-                if (line.charAt(j) == 'A') {
-                    start = new Point(row, j);
-                } else if (line.charAt(j) == 'B') {
-                    end = new Point(row, j);
-                }
-                dist[floorNum][row][j] = -1;
-            }
-        }
-        int ans = bfs();
-        System.out.println(ans);
-    }
+        char[][] grid = {
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'X', '.', '.', 'X', 'A', 'X'},
+                {'X', 'X', 'X', '.', '.', 'X', 'X', 'X'},
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', '.', '.', '.', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', '.', '.', '.', '.', 'B', '.', 'X'},
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'}
+        };
 
-    public static int bfs() {
-        Queue<Point> q = new LinkedList<>();
-        for (int i = 0; i < f; i++) {
-            if (dist[i][start.x][start.y] == -1) {
-                dist[i][start.x][start.y] = 0;
-                q.add(start);
-            }
-        }
-        while (!q.isEmpty()) {
-            Point curr = q.remove();
-            int floorNum = getFloorNum(curr);
-            for (int i = 0; i < 4; i++) {
-                int nx = curr.x + dx[i];
-                int ny = curr.y + dy[i];
-                if (isValid(nx, ny) && floor[floorNum][nx][ny] != 'X' && dist[floorNum][nx][ny] == -1) {
-                    dist[floorNum][nx][ny] = dist[floorNum][curr.x][curr.y] + 1;
-                    q.add(new Point(nx, ny));
-                }
-            }
-        }
-        int res = Integer.MAX_VALUE;
-        for (int i = 0; i < f; i++) {
-            if (dist[i][end.x][end.y] != -1) {
-                res = Math.min(res, dist[i][end.x][end.y]);
-            }
-        }
-        return res;
-    }
+        int startX = 1;
+        int startY = 6;
+        int endX = 6;
+        int endY = 5;
 
-    public static boolean isValid(int x, int y) {
-        return x >= 0 && y >= 0 && x < n && y < n;
-    }
-
-    public static int getFloorNum(Point p) {
-        for (int i = 0; i < f; i++) {
-            if (p.x >= i * n && p.x < (i + 1) * n) {
-                return i;
-            }
-        }
-        return -1;
+        int wallsToBreak = breakWall(grid, startX, startY, endX, endY);
+        System.out.println("Minimum walls to break: " + wallsToBreak);
     }
 }
+
