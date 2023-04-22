@@ -48,6 +48,7 @@ public class DynamicStackOperations {
                 el.push(input.nextInt());
                 System.out.println("The stack elements now are:");
                 System.out.println(el);
+                break;
             case 'c':
             case 'C':
                 System.out.println("You want to change new element.");
@@ -57,17 +58,21 @@ public class DynamicStackOperations {
                 el.set(index, input.nextInt());
                 System.out.println("The stack elements now are:");
                 System.out.println(el);
+                break;
+            case 'r':
             case 'R':
                 System.out.println("You will remove or delete the element.");
                 System.out.print("Enter the index of the element you want to delete: ");
                 el.remove(input.nextInt());
                 System.out.println("The stack elements now are:");
                 System.out.println(el);
+                break;
             case 'i':
             case 'I':
                 System.out.println("You want to iterate the stack elements.");
                 System.out.println("The stack elements are:");
                 System.out.println(el);
+                break;
             case 'g':
             case 'G':
                 System.out.println("You want to get the stack elements.");
@@ -76,17 +81,23 @@ public class DynamicStackOperations {
                     System.out.print(el.get(i) + " ");
                 }
                 System.out.println();
+                break;
             case 'S':
                 System.out.println("You want to sort the elements of the stack elements.");
                 System.out.println("The original arrangements: " + el);
                 sorter_stack(el);
                 System.out.println("Sorted stack elements: " + el);
+                break;
             case 'Z':
                 System.out.println("You want to know the size of the Stack.");
                 System.out.println("The stack size is: " + el.size());
+                break;
             case 'T':
                 System.out.println("You want to know the top element of the Stack.");
                 System.out.println("The top element of the stack is: " + el.peek());
+                break;
+            default:
+                System.out.println("That is not one of the options, please try again.");
             }
     }
 }

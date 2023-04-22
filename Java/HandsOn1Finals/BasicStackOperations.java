@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 class BasicStackOperations {
     public static void main (String[] args) {
