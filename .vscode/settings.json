@@ -1,6 +1,6 @@
 {
   "editor.fontFamily": "Jetbrains Mono",
-  "editor.fontSize": 14,
+  "editor.fontSize": 19,
   "editor.fontLigatures": true,
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

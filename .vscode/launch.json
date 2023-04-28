@@ -3,6 +3,41 @@
   "configurations": [
     {
       "type": "java",
+      "name": "QueueWithMathOperations",
+      "request": "launch",
+      "mainClass": "QueueWithMathOperations",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
+      "name": "QueueSearchValues",
+      "request": "launch",
+      "mainClass": "QueueSearchValues",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
+      "name": "QueueMathOperations",
+      "request": "launch",
+      "mainClass": "QueueMathOperations",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
+      "name": "QueueCountries",
+      "request": "launch",
+      "mainClass": "QueueCountries",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
+      "name": "BasicQueueOperations",
+      "request": "launch",
+      "mainClass": "BasicQueueOperations",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
       "name": "DynamicStackOperations",
       "request": "launch",
       "mainClass": "DynamicStackOperations",
