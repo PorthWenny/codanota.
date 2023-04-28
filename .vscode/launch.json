@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "DynamicQueueOperations",
+      "request": "launch",
+      "mainClass": "DynamicQueueOperations",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
       "name": "QueueWithMathOperations",
       "request": "launch",
       "mainClass": "QueueWithMathOperations",

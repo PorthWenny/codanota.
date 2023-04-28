@@ -1,6 +1,11 @@
+import java.util.*;
+
 public class DynamicQueueOperations {
+    public static Scanner input = new Scanner(System.in);
+
     public static void main (String[] args) {
-        Scanner input = new Scanner(System.in);
+        String repeat = "y";
+        while (repeat.equalsIgnoreCase("y")) {
 
         System.out.print("What is the size of the queue? ");
         int n = input.nextInt();
@@ -9,6 +14,12 @@ public class DynamicQueueOperations {
         Queue<Integer> num = new LinkedList<>();
         for (int i = 0; i < n; i++) {
             num.add(input.nextInt());
+        }
+
+        // adding temp storage
+        LinkedList<Integer> temp = new LinkedList<>();
+        for (int curr : num) {
+            temp.add(curr);
         }
 
         printRules();
@@ -22,11 +33,11 @@ public class DynamicQueueOperations {
                 break;
             case 'c':
             case 'C':
-                caseC(num);
+                caseC(temp);
                 break;
             case 'r':
             case 'R':
-                caseR(num);
+                caseR(temp);
                 break;
             case 'i':
             case 'I':
@@ -36,18 +47,17 @@ public class DynamicQueueOperations {
             case 'G':
                 caseG(num);
                 break;
-            case 'e':
-            case 'E':
-                caseE(num);
-                break;
             case 's':
             case 'S':
-                caseS(num);
+                caseS(temp);
                 break;
             case 'z':
             case 'Z':
                 caseZ(num);
                 break;
+            case 't':
+            case 'T':
+                caseT(num);
             default:
                 System.out.println("Invalid input. Please try again.");
                 break;
@@ -70,7 +80,8 @@ public class DynamicQueueOperations {
         System.out.println("G- get elements");
         System.out.println("E- add elements in between two numbers");
         System.out.println("S- Sorting elements");
-        System.out.println("Z - ArrayList size\n");
+        System.out.println("Z - ArrayList size");
+        System.out.println("T – Top element\n");
     }
 
     public static void caseA (Queue<Integer> num) {
@@ -78,76 +89,65 @@ public class DynamicQueueOperations {
         System.out.print("Enter the element you want to add: ");
         num.add(input.nextInt());
 
-        System.out.println("\nThe queue elements now are:");
+        System.out.println("\nThe queue elements now are: ");
         System.out.println(num);
     }
 
-    public static void caseC (Queue<Integer> num) {
+    public static void caseC (LinkedList<Integer> temp) {
         System.out.println("You want to change new element.");
         System.out.print("Enter the index of the element you want to change: ");
         int index = input.nextInt();
         System.out.print("Enter the new value: ");
-        int value = input.nextInt();
-        list.set(index, value);
-
-        System.out.println("\nThe ArrayList elements now are:");
-        System.out.println(list);
+        temp.set(index, input.nextInt());
+        System.out.println("\nThe queue elements now are:");
+        System.out.println(temp);
     }
 
-    public static void caseR (ArrayList<Integer> list) {
+    public static void caseR (LinkedList<Integer> temp) {
         System.out.println("You will remove or delete the element.");
         System.out.print("Enter the index of the element you want to delete: ");
-        list.remove(input.nextInt());
-
-        System.out.println("\nThe ArrayList elements now are:");
-        System.out.println(list);
+        temp.remove(input.nextInt());
+        System.out.println("\nThe queue elements now are:");
+        System.out.println(temp);
     }
 
-    public static void caseI (ArrayList<Integer> list) {
-        System.out.println("You want to iterate the ArrayList elements.");
+    public static void caseI (Queue<Integer> num) {
+        System.out.println("You want to iterate the queue elements.");
 
-        System.out.println("\nThe ArrayList elements are:");
-        System.out.println(list);
+        System.out.println("\nThe Queue elements are:");
+        System.out.println(num);
     }
 
-    public static void caseG (ArrayList<Integer> list) {
+    public static void caseG (Queue<Integer> num)  {
         System.out.println("You want to get the ArrayList elements.");
 
-        System.out.println("\nThe ArrayList elements are:");
-        for (int i = 0; i < size; i++) {
-             System.out.print(list.get(i) + " ");
-            }
+        System.out.println("\nThe Queue elements are:");
+        for (int curr : num) {
+            System.out.print(curr + " ");
+        }
         System.out.println();
     }
 
-    public static void caseE (ArrayList<Integer> list) {
-        System.out.println("You want to add elements in between two numbers.");
-        System.out.print("Beginning index: "); 
-        int first = input.nextInt();
-        System.out.print("Bxng index: "); 
-        int last = input.nextInt();
-        System.out.print("Enter the value of the element to be inserted: "); 
-        int insert = input.nextInt();
-        list.add(last - 1, insert);
-
-        System.out.println("\nThe ArrayList elements are:");
-        System.out.println(list);
-    }
-
-    public static void caseS (ArrayList<Integer> list) {
-        System.out.println("You want to sort the elements of the Array List.");
+    public static void caseS (LinkedList<Integer> temp)  {
+        System.out.println("You want to sort the elements of the queue.");
 
         System.out.print("\nThe original arrangements: ");
-        System.out.println(list);
-        System.out.print("Sorted ArrayList: ");
-        Collections.sort(list);
-        System.out.println(list);
+        System.out.println(temp);
+        System.out.print("Sorted queue elements: ");
+        Collections.sort(temp);
+        System.out.println(temp);
     }
 
-    public static void caseZ (ArrayList<Integer> list) {
+    public static void caseZ (Queue<Integer> num)  {
         System.out.println("You want to know the size of the ArrayList");
 
-        System.out.println("\nThe ArrayList size is: " + size);
+        System.out.println("\nThe queue size is: " + num.size());
     }
+
+    public static void caseT (Queue<Integer> num)  {
+        System.out.println("You want to know the top element of the queue.");
+
+        System.out.println("\nThe top element of the queue is: " + num.peek());
     }
 }
+
