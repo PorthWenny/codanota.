@@ -12,7 +12,6 @@ public class DynamicLinkedListOperations {
 
     //needed syntax for method
     public static Scanner input = new Scanner(System.in);
-    public static Records rec = new Records();
 
     public static void main (String[] args) {
         ArrayList<Records> list = new ArrayList<>();
@@ -21,9 +20,11 @@ public class DynamicLinkedListOperations {
         int n = input.nextInt();
         System.out.println("\nEnter the values of the LinkedList:");
 
+        Records rec = new Records();
+
         // adding different records to a list
         for (int i = 1; i <= n; i++) {
-            System.out.println("\nEnter Record #" + n);
+            System.out.println("\nEnter Record #" + i);
             System.out.print("Enter student number: ");
             rec.id = input.next();
             rec.id += input.nextLine();
@@ -51,12 +52,16 @@ public class DynamicLinkedListOperations {
             switch (choice) {
                 case 'A':
                     caseA(list, n);
+                    break;
                 case 'C':
                     caseC(list, n);
+                    break;
                 case 'R':
                     caseR(list, n);
+                    break;
                 case 'S':
-                    caseC(list, n);
+                    caseS(list, n);
+                    break;
                 case 'X':
                     break;
                 default:
@@ -81,28 +86,30 @@ public class DynamicLinkedListOperations {
     }
 
     public static void caseA (ArrayList<Records> list, int n) {
+        Records rec1 = new Records();
         System.out.println("You want to add a new element.");
         System.out.print("Enter student number: ");
-            rec.id = input.next();
-            rec.id += input.nextLine();
+            rec1.id = input.next();
+            rec1.id += input.nextLine();
             for (int i = 0; i < n; i++) {
-                if (rec.id.compareToIgnoreCase(list.get(i).id) == 0) {
+                if (rec1.id.compareToIgnoreCase(list.get(i).id) == 0) {
                     System.out.println("A duplicate student number has been detected, record cannot be added successfully");
                     return;
                 }
             }
             System.out.print("Enter Name: ");
-            rec.name = input.nextLine();
+            rec1.name = input.nextLine();
             System.out.print("Enter Address: ");
-            rec.loc = (input.nextLine());
+            rec1.loc = (input.nextLine());
             System.out.print("Enter Age: ");
-            rec.age = (input.nextLine());
+            rec1.age = (input.nextLine());
             System.out.print("Enter Course: ");
-            rec.course = (input.nextLine());
-            list.add(rec);
+            rec1.course = (input.nextLine());
+            list.add(rec1);
     }
 
     public static void caseC (ArrayList<Records> list, int n) {
+        Records rec = new Records();
         System.out.println("You want to change new element.");
         System.out.print("Enter the index of the element you want to change: ");
         int index = input.nextInt();
@@ -138,6 +145,7 @@ public class DynamicLinkedListOperations {
     }
 
     public static void caseR (ArrayList<Records> list, int n) {
+        Records rec = new Records();
         System.out.print("Enter the student number you want to delete:");
         String num = input.next();
         num += input.nextLine();
@@ -153,9 +161,10 @@ public class DynamicLinkedListOperations {
     }
 
     public static void caseS (ArrayList<Records> list, int n) {
-        System.out.print("Enter Student Number to search::");
+        System.out.print("Enter Student Number to search: ");
         String num = input.next();
         num += input.nextLine();
+        System.out.println(num);
         for (int i = 0; i < n; i++) {
             if (num.compareToIgnoreCase(list.get(i).id) == 0) {
                 System.out.println("Record exists");

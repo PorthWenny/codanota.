@@ -78,7 +78,6 @@ public class DynamicQueueOperations {
         System.out.println("R- Removing elements/Delete element");
         System.out.println("I- Iterating elements");
         System.out.println("G- get elements");
-        System.out.println("E- add elements in between two numbers");
         System.out.println("S- Sorting elements");
         System.out.println("Z - ArrayList size");
         System.out.println("T – Top element\n");
