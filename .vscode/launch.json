@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "LinkedListDisplay",
+      "request": "launch",
+      "mainClass": "LinkedListDisplay",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
+      "name": "CompareWithStack",
+      "request": "launch",
+      "mainClass": "CompareWithStack",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
       "name": "CompareTwoQueues",
       "request": "launch",
       "mainClass": "CompareTwoQueues",
