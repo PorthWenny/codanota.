@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CompareTwoQueues",
+      "request": "launch",
+      "mainClass": "CompareTwoQueues",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
+      "name": "PlaceValues",
+      "request": "launch",
+      "mainClass": "PlaceValues",
+      "projectName": "codanota._6640002e"
+    },
+    {
+      "type": "java",
       "name": "DynamicLinkedListOperations",
       "request": "launch",
       "mainClass": "DynamicLinkedListOperations",
