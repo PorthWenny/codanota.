@@ -53,44 +53,26 @@ public class LinkedListDisplay {
         System.out.println("The biggest value: " + big);
         System.out.println("Number of negative numbers: " + neg);
         System.out.print("Even numbers are: ");
-        for (int curr : even) {
-            System.out.print(curr);
-            if (curr != even.get(even.size() - 1)) {
-                System.out.print(", ");
-            }
-            else {
-                System.out.println();
-            }
-        }
+        list_printer(even);
         System.out.print("Odd numbers are:");
-        for (int curr : odd) {
-            System.out.print(curr);
-            if (curr != odd.get(odd.size() - 1)) {
-                System.out.print(", ");
-            }
-            else {
-                System.out.println();
-            }
-        }
+        list_printer(odd);
         System.out.print("Negative numbers are:");
-        for (int curr : neglist) {
-            System.out.print(curr);
-            if (curr != neglist.get(neglist.size() - 1)) {
-                System.out.print(", ");
-            }
-            else {
-                System.out.println();
-            }
-        }
+        list_printer(neglist);
         System.out.print("Numbers greater than -9 are ");
-        for (int curr : great) {
-            System.out.print(curr);
-            if (curr != great.get(great.size() - 1)) {
-                System.out.print(", ");
-            }
-            else {
-                System.out.println();
-            }
+        list_printer(great);
+    }
+
+
+static void list_printer (LinkedList<Integer> wow) {
+    for (int curr : wow) {
+        System.out.print(curr);
+        if (curr != wow.get(wow.size() - 1)) {
+            System.out.print(", ");
+        }
+        else {
+            System.out.println();
         }
     }
+}
+
 }
