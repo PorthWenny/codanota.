@@ -1,4 +1,4 @@
-public class ArmstrongNumbers {
+public class LessOrMore {
     public static void main (String[] args) {
 
     System.out.println("The Armstrong numbers from 1 - 500 are...");

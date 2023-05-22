@@ -10,17 +10,21 @@ public class TrailingDigits {
 
         int k = 0, max_trail = 0;
         while ((k++ * price) < bundle) {
-            max_trail = 0;
+            int curr_trail = 0;
             int curr_bundle = (k * price);
 
             while (curr_bundle != 0) {
                 int digit = curr_bundle % 10;
 
                 if (digit == trail) {
-                    max_trail++;
+                    curr_trail++;
                 }
 
                 curr_bundle /= 10;
+            }
+
+            if (curr_trail > max_trail) {
+                max_trail = curr_trail;
             }
         }
 
